@@ -8,6 +8,7 @@ This is the **beta channel** for the OpenCode add-on. It contains experimental f
 
 - **Beta baseline reset**: `1.9.0b0` is based on the current stable OpenCode add-on release and does not include beta-only feature changes yet.
 - **Serial device access**: Selected host UART/serial devices can be mapped into the add-on for USB flashing and adapter inspection workflows. Full Supervisor `uart` and `udev` manifest flags remain disabled by default because they are static permissions, not runtime user options.
+- **Optional LAN server mode**: You can now enable an OpenCode server bound to `0.0.0.0` so other computers on your local network can connect directly.
 
 ## Add-on Folder Access
 
@@ -22,6 +23,21 @@ OpenCode snapshots are disabled by default in this add-on to reduce memory and d
 ## Zigbee2MQTT URL
 
 If you configure `z2m_url` for zigporter commands, use a full URL such as `http://homeassistant.local:8099`. Host/IP-only values are accepted and treated as `http://`.
+
+## LAN Server Mode (Beta)
+
+You can enable direct LAN access for remote OpenCode clients from the add-on **Configuration** tab:
+
+- **Enable OpenCode LAN Server**: `true`/`false` (default `false`)
+- **OpenCode LAN Server Port**: TCP port (default `4096`)
+
+On the secondary computer, use `opencode attach` with your Home Assistant host IP and configured port:
+
+```bash
+opencode attach http://<home-assistant-ip>:4096
+```
+
+Use this only on trusted networks.
 
 ## Reporting Issues
 

@@ -36,6 +36,14 @@ configuration:
     name: "Enable Add-on Folder Guidance"
     description: "Show guidance for working with Home Assistant add-on folders. Security note: /addons and /addon_configs are mounted into this add-on for development access, and /addon_configs may contain sensitive add-on data. Changing this option requires restarting the add-on to update terminal guidance, but it is not a hard filesystem permission boundary."
 
+  enable_server:
+    name: "Enable OpenCode LAN Server"
+    description: "Start an OpenCode server bound to 0.0.0.0 so other computers on your local network can connect directly. Keep this off unless you need remote clients, and only enable it on trusted networks."
+
+  server_port:
+    name: "OpenCode LAN Server Port"
+    description: "TCP port used by the optional LAN server mode. The default is 4096."
+
   access_token:
     name: "Home Assistant Access Token"
     description: "A long-lived access token for direct communication with Home Assistant Core. Required for ESPHome integration and the screenshot tool. Create one in the HA UI under Profile → Long-Lived Access Tokens. Leave empty if you don't use ESPHome or screenshot tools."
