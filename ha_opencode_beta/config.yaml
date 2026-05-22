@@ -1,9 +1,9 @@
 ---
 name: "OpenCode Beta"
 description: "Beta channel for OpenCode - AI coding agent for Home Assistant. May contain experimental features."
-version: "1.7.3b1"
+version: "1.7.3b2"
 slug: "ha_opencode_beta"
-image: "ghcr.io/magnusoverli/ha_opencode_beta/{arch}"
+image: "ghcr.io/benwestrate/ha_opencode_beta/{arch}"
 url: "https://github.com/magnusoverli/opencode"
 arch:
   - aarch64
