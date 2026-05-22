@@ -16,10 +16,10 @@ You can enable direct LAN access for remote OpenCode clients from the add-on **C
 - **Enable OpenCode LAN Server**: `true`/`false` (default `false`)
 - **OpenCode LAN Server Port**: TCP port (default `4096`)
 
-Connection URL format:
+On the secondary computer, use `opencode attach` with your Home Assistant host IP and configured port:
 
-```text
-http://<home-assistant-ip>:4096
+```bash
+opencode attach http://<home-assistant-ip>:4096
 ```
 
 Use this only on trusted networks.

@@ -260,16 +260,16 @@ When enabled, the add-on starts `opencode serve` bound to `0.0.0.0:<port>`.
 
 ### Connect from Another Computer
 
-Use your Home Assistant host IP and configured port:
+On the secondary computer, use `opencode attach` with your Home Assistant host IP and configured port:
 
-```text
-http://<home-assistant-ip>:4096
+```bash
+opencode attach http://<home-assistant-ip>:4096
 ```
 
 Example:
 
-```text
-http://192.168.1.50:4096
+```bash
+opencode attach http://192.168.1.50:4096
 ```
 
 ### Security Notes
