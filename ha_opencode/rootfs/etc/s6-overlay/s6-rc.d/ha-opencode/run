@@ -105,9 +105,9 @@ bashio::log.info "LAN server config: ENABLE_SERVER=${ENABLE_SERVER} SERVER_PORT=
 if bashio::var.true "${ENABLE_SERVER}"; then
     bashio::log.warning "LAN server mode is enabled. OpenCode will listen on 0.0.0.0:${SERVER_PORT}"
     bashio::log.warning "Ensure your OpenCode provider credentials and access controls are configured appropriately."
-    bashio::log.info "Starting OpenCode LAN server: opencode serve --host 0.0.0.0 --port ${SERVER_PORT}"
+    bashio::log.info "Starting OpenCode LAN server: opencode serve --hostname 0.0.0.0 --port ${SERVER_PORT}"
 
-    opencode serve --host 0.0.0.0 --port "${SERVER_PORT}" &
+    opencode serve --hostname 0.0.0.0 --port "${SERVER_PORT}" &
     OPENCODE_SERVER_PID=$!
 
     trap 'kill "${OPENCODE_SERVER_PID}" 2>/dev/null || true' EXIT INT TERM

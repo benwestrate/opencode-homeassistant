@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.7.3b3
+
+- Fix LAN server startup for current OpenCode CLI versions by using `opencode serve --hostname 0.0.0.0` instead of the unsupported `--host` flag.
+
 ## 1.7.3b2
 
 - Fix beta image source for the local fork so Home Assistant pulls `ghcr.io/benwestrate/ha_opencode_beta/{arch}` instead of the upstream image.
