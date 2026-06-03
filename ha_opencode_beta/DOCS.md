@@ -46,7 +46,7 @@ Example, if you mapped `4096/tcp` to host port `4096`:
 opencode attach http://192.168.1.50:4096
 ```
 
-The add-on log may include `opencode server listening on http://0.0.0.0:4096`. That is the internal container listener, not the URL to use from another computer. Use your Home Assistant host and the mapped host port instead.
+The add-on log shows the current Home Assistant port mapping when the server starts, for example `Home Assistant port mapping: 4096/tcp -> 3443`. If OpenCode also prints `opencode server listening on http://0.0.0.0:4096`, that is the internal container listener, not the URL to use from another computer. Use your Home Assistant host and the mapped host port instead.
 
 Security warning: enabling this service and mapping the port exposes an OpenCode server on your LAN. Only use this on trusted networks, restrict access with your network/firewall controls, and never expose the port to the internet or untrusted networks.
 
