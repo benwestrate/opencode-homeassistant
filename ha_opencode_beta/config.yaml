@@ -1,10 +1,10 @@
 ---
-name: "OpenCode Beta"
+name: "OpenCode Beta -- Westrate"
 description: "Beta channel for OpenCode - AI coding agent for Home Assistant. May contain experimental features."
-version: "1.9.0b1"
+version: "1.9.0b2"
 slug: "ha_opencode_beta"
-image: "ghcr.io/magnusoverli/ha_opencode_beta/{arch}"
-url: "https://github.com/magnusoverli/opencode"
+image: "ghcr.io/benwestrate/ha_opencode_beta/{arch}"
+url: "https://github.com/benwestrate/opencode-homeassistant"
 arch:
   - aarch64
   - amd64
@@ -18,7 +18,7 @@ ingress_stream: true
 panel_icon: mdi:robot-outline
 panel_title: OpenCode Beta
 ports:
-  4096/tcp: 4096
+  4096/tcp: null
 ports_description:
   4096/tcp: "OpenCode LAN server"
 
@@ -71,9 +71,8 @@ options:
   addon_access_enabled: false
 
   # Optional LAN server mode for remote OpenCode clients.
-  # Warning: This exposes an OpenCode server on your local network.
+  # Warning: If you map 4096/tcp in Network settings, this exposes an OpenCode server on your LAN.
   enable_server: false
-  server_port: 4096
 
   # Long-lived access token for direct HA Core API access.
   # Required for ESPHome ingress and screenshot tool (create at: Profile → Long-Lived Access Tokens).
@@ -118,7 +117,6 @@ schema:
 
   # OpenCode LAN server mode
   enable_server: bool
-  server_port: port
 
   # HA Core access token
   access_token: str?

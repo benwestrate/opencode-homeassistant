@@ -38,11 +38,7 @@ configuration:
 
   enable_server:
     name: "Enable OpenCode LAN Server"
-    description: "Start an OpenCode server bound to 0.0.0.0 so other computers on your local network can connect directly. Keep this off unless you need remote clients, and only enable it on trusted networks."
-
-  server_port:
-    name: "OpenCode LAN Server Port"
-    description: "TCP port used by the optional LAN server mode. The default is 4096."
+    description: "Start an OpenCode server on internal port 4096. To access it from another computer, also map 4096/tcp in the Network settings. Only use this on trusted networks and never expose it to the internet."
 
   access_token:
     name: "Home Assistant Access Token"

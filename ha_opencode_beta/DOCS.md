@@ -26,18 +26,27 @@ If you configure `z2m_url` for zigporter commands, use a full URL such as `http:
 
 ## LAN Server Mode (Beta)
 
-You can enable direct LAN access for remote OpenCode clients from the add-on **Configuration** tab:
+LAN server mode lets you attach to the Home Assistant-hosted OpenCode session from a terminal outside the Home Assistant UI.
 
-- **Enable OpenCode LAN Server**: `true`/`false` (default `false`)
-- **OpenCode LAN Server Port**: TCP port (default `4096`)
+To enable LAN access:
+
+1. In the add-on **Configuration** tab, set **Enable OpenCode LAN Server** to `true`.
+2. In the add-on **Network** settings, map `4096/tcp` to the host port you want to use.
+3. Save and restart the add-on.
 
 On the secondary computer, use `opencode attach` with your Home Assistant host IP and configured port:
 
 ```bash
-opencode attach http://<home-assistant-ip>:4096
+opencode attach http://<home-assistant-ip>:<mapped-host-port>
 ```
 
-Use this only on trusted networks.
+Example, if you mapped `4096/tcp` to host port `4096`:
+
+```bash
+opencode attach http://192.168.1.50:4096
+```
+
+Security warning: enabling this service and mapping the port exposes an OpenCode server on your LAN. Only use this on trusted networks, restrict access with your network/firewall controls, and never expose the port to the internet or untrusted networks.
 
 ## Reporting Issues
 
